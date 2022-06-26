@@ -123,5 +123,13 @@
 }
 .star {
   color: gold;
-
+}
+.link-netlify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.name_link {
+  padding: 5px;
 }
