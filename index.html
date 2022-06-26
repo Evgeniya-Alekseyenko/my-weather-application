@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>HW_week_5</title>
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/cbfd15a155.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="list">
+        <ul class="nav link_style">
+          <li>
+            <img src="./src/img/images.png" alt="umbrella" width="50px" />
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+        </ul>
+      </div>
+      <h1>🎈Weather app</h1>
+
+      <form id="city-form">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter your city..."
+          required
+        />
+        <input type="submit" value="Search" id="search" />
+        <button type="submit" id="currentBtn">Current</button>
+      </form>
+      <h3 id="city-name">Kharkiv</h3>
+      <div id="temp-data">
+        23
+        <!-- <span class="units">
+          <a href="#" id="cels">°C</a>|
+          <a href="#" id="fahr">°F</a>
+        </span> -->
+      </div>
+      <h4>Today</h4>
+
+      <span class="time">Time</span>
+      <div class="units-container">
+        <div class="temp-container">
+          <img src="src/img/Sun_Monochromatic.png" width="100px" />
+        </div>
+        <div class="forecast_box">
+          <div><p>Forecast for 5 days</p></div>
+          <div class="forecast_container">
+            <div class="forecast">
+              Monday<br />
+              ☁ <br />
+              15°
+            </div>
+            <div class="forecast">
+              Tuesday<br />
+              🌞<br />
+              20°
+            </div>
+            <div class="forecast">
+              Wednesday<br />
+              ⛅ <br />18°
+            </div>
+            <div class="forecast">
+              Thusday<br />
+              🌞 <br />19°
+            </div>
+            <div class="forecast">
+              Friday<br />
+              ⛅<br />
+              18°
+            </div>
+          </div>
+        </div>
+        <div class="props">
+          <span id="pressure">Pressure: mbar </span>
+          <span id="humidity">Humidity: %</span>
+          <span id="wind">Wind: km/h </span>
+        </div>
+      </div>
+      <div>
+        <div class="rating_title">Rating</div>
+        <div class="rating_box">
+          <i class="fa-solid fa-star rating_star star"></i>
+          <i class="fa-solid fa-star rating_star star"></i>
+          <i class="fa-solid fa-star rating_star star"></i>
+          <i class="fa-solid fa-star rating_star star"></i>
+          <i class="fa-solid fa-star rating_star star"></i>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
