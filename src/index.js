@@ -72,9 +72,10 @@ function showCityWeather(event) {
     event.preventDefault();
     let inputCity = document.querySelector("#city-input");
     let cityUrl = `${url}q=${inputCity.value}&${unit}&appid=${apiKey}`;
-    if (inputCity.value.length !== 0) {
+    if (inputCity.value.length !== 0)  {
       axios.get(cityUrl).then(showCity);
-    } else {
+    }
+     else {
       alert("Enter the the city!");
     }
   }
@@ -99,7 +100,7 @@ function showPosition(position) {
   let btn = document.querySelector("#currentBtn");
   btn.addEventListener("click", showCurrentCityWeather)
 
-  
+  // Additional functionality: adding a dark theme, and the ability to change the light theme to a dark one
 
   let switchMode = document.getElementById("switchMode");
 
@@ -112,16 +113,3 @@ function showPosition(position) {
       theme.href = "src/style/light-mode.css"
     }
   }
-
-  document.getElementById("clearButton").onclick = function(e) {
-    // Если необходимо предотвратить/отменить событие по умолчанию,
-    // то необходимо вызвать метод preventDefault у события
-    // https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault
-    // e.preventDefault();
-    // если необходимо также предотвратить дальнейшее "всплытие" события,
-    // то необходимо вызвать метод stopPropagation у события
-    // https://developer.mozilla.org/ru/docs/Web/API/Event/stopPropagation
-    // e.stopPropagation();
-    document.getElementById("city-input").value = "";
-  }
- 

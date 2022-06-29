@@ -1,5 +1,5 @@
 body {
-    background: rgb(29, 29, 29);
+    background: black;
     transition: 3s;
     color: white;
   }
@@ -8,16 +8,15 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-      text-align: center;
-      /* margin: 0 auto; */
-      margin-top: 20px;
-      padding: 20px;
-      max-width: 100%;
-      height: 100vh;
-      border: 2px solid grey;
-      border-radius: 20px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 100%;
+    height: 100vh;
+    border: 2px solid grey;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
     #navbar {
     background-color: red;
@@ -32,17 +31,31 @@ body {
    color: red;
    }
     #city-name, #temp-data {
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-size: 36px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 36px;
+    }
+    .navbar {
+    width: 100%;
+    }
+    .nav-item {
+    margin-right: 2rem;
     }
     .buttonwrapper {
       display: flex;
       width: 100%;
+      align-items: center;
     }
     #clearButton {
       margin-left: -20%;
       border: none;
       background-color: transparent;
+    }
+    .navbar-toggler {
+      background-color: red;
+    }
+    .navbar-collapse {
+      display: flex;
+      align-items: flex-start;
     }
     .heading {
       display:flex;
@@ -95,14 +108,25 @@ body {
   .star {
     color: gold;
   }
-  .link-netlify {
+  .link-git-box {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px;
+    color:red;
+  }
+  .link-git {
+    color: green;
+  }
+  .img-git {
+    margin-right: 10px;
+    border: 2px solid white;
+    border-radius: 100%;
+    background: white;
   }
   .name_link {
     padding: 5px;
+    color: red;
   }
   .card-img-top {
     display: block;

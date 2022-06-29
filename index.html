@@ -12,19 +12,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
     />
-    <!-- <link rel="stylesheet" href="src/style/style.css" /> -->
     <link rel="stylesheet" href="src/style/light-mode.css" id="theme" />
   </head>
   <body>
     <div class="container">
       <div class="main">
-        <nav class="navbar navbar-expand-lg bg-light"   id="navbar">
+        <nav class="navbar navbar-expand-lg bg-light" id="navbar">
           <div class="container-fluid">
-            <a
-              class="navbar-brand"
-              href="https://getbootstrap.com/docs/5.2/getting-started/introduction/"
-            >
-              <!-- <img src="./src/img/images.png" alt="umbrella" width="50px" /> -->
+            <a class="navbar-brand" href="https://www.shecodes.io/">
               <img src="src/img/undraw_Weather_app_re_kcb1.png" width="80px" />
             </a>
             <button
@@ -53,104 +48,64 @@
                   <a class="nav-link" href="#">About us</a>
                 </li>
                 <li class="nav-item">
-                  <!-- <a class="nav-link" href="#">Settings</a> -->
-                  <button class="btn btn-outline-dark me-2" id= "switchMode" type="submit">Settings</button>
+                  <button
+                    class="btn btn-outline-dark me-8"
+                    id="switchMode"
+                    type="submit"
+                  >
+                    Settings
+                  </button>
                 </li>
               </ul>
-              <form class="d-flex" role="search" id="city-form"
-    
-              
-               >
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                <div class="form-group required">
-                <div class="col-sm-4 buttonwrapper">
-                <input
-                  class="form-control me-2"
-                  type="text"
-                  id="city-input"
-                  placeholder="Enter your city..."
-                  required
-                />
-                <button id="clearButton">X</button>
-                </div>
-                </div>
-                <!-- <input type="submit" value="Search" id="search" /> -->
-                <button
-                  class="btn btn-outline-success ms-2"
-                  type="submit"
-                  value="Search"
-                  id="search"
-                >
-                  Search
-                </button>
-                <button
-                  class="btn btn-success ms-2"
-                  type="submit"
-                  id="currentBtn"
-                >
-                  Current
-                </button>
-              </form>
             </div>
           </div>
         </nav>
 
-        <!-- <div class="list">
-          <ul class="nav link_style">
-            <li>
-              <img src="./src/img/images.png" alt="umbrella" width="50px" />
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Settings</a>
-            </li>
-          </ul>
-        </div> -->
+        <form class="d-flex" role="search" id="city-form">
+          <div class="form-group required">
+            <div class="col-sm-4 buttonwrapper">
+              <input
+                class="form-control me-2"
+                type="text"
+                id="city-input"
+                placeholder="Enter your city..."
+                required
+              />
+              <button type="reset" id="clearButton">X</button>
+            </div>
+          </div>
+          <button
+            class="btn btn-outline-success ms-2"
+            type="submit"
+            value="Search"
+            id="search"
+          >
+            Search
+          </button>
+          <button class="btn btn-success ms-2" type="submit" id="currentBtn">
+            Current
+          </button>
+        </form>
+
         <div class="heading">
           <img src="src/img/Sun_Monochromatic.png" width="80px" />
           <h1>Weather app</h1>
         </div>
-
-        <!-- <form id="city-form">
-          <input
-            type="text"
-            id="city-input"
-            placeholder="Enter your city..."
-            required
-          />
-          <input type="submit" value="Search" id="search" />
-          <button type="submit" id="currentBtn">Current</button>
-        </form> -->
-
-        <h3 id="city-name">Kharkiv</h3>
+        <h2 id="city-name">Kharkiv</h2>
         <div id="temp-data">
-          23
+          23°
           <!-- <span class="units">
           <a href="#" id="cels">°C</a>|
           <a href="#" id="fahr">°F</a>
         </span> -->
         </div>
+
         <h4>Today</h4>
 
         <span class="time">Time</span>
 
         <div class="units-container">
-        <!-- <div class="temp-container">
-            <img src="src/img/Sun_Monochromatic.png" width="100px" />
-          </div> -->
-        <!-- <div class="forecast_box">
-            <div><p>Forecast for 5 days</p></div> -->
-        <!-- <div class="container"> -->
-
-          
-          <div
-            class="row  row-cols-sm-2 row-cols-md-5 justify-content-center"
-          >
+          <div class="row row-cols-sm-2 row-cols-md-5 justify-content-center">
             <div class="col">
               <div
                 class="card align-items-center shadow"
@@ -237,39 +192,7 @@
               </div>
             </div>
           </div>
-
-          </div>
-
-        <!-- </div> -->
-
-        <!-- <div class="forecast_container">
-              <div class="forecast">
-                Monday<br />
-                ☁ <br />
-                15°
-              </div>
-              <div class="forecast">
-                Tuesday<br />
-                🌞<br />
-                20°
-              </div>
-              <div class="forecast">
-                Wednesday<br />
-                ⛅ <br />18°
-              </div>
-              <div class="forecast">
-                Thusday<br />
-                🌞 <br />19°
-              </div>
-              <div class="forecast">
-                Friday<br />
-                ⛅<br />
-                18°
-              </div>
-            </div> -->
-        <!-- </div>
-
-        </div> -->
+        </div>
 
         <div class="props">
           <span id="pressure">Pressure: mbar </span>
@@ -288,13 +211,25 @@
           </div>
         </div>
       </div>
-      <div class="link-netlify">
-        <a href="https://github.com/Evgeniya-Alekseyenko/my-weather-application"
-          >Open-sourse code
+      <div class="link-git-box">
+        <a
+          href="https://github.com/Evgeniya-Alekseyenko/my-weather-application"
+          class="link-git"
+        >
+          <img
+            class="img-git"
+            src="src/img/kisspng-github-bitbucket-fork-software-repository-icons-for-windows-github-logo-5ab0faded05d05.5387371715215479988535.png"
+            width="50px"
+          />Open-sourse code
+          <span class="name_link"> by Yevgeniya Alekseyenko </span>
         </a>
-        <span class="name_link">by Yevgeniya Alekseyenko</span>
       </div>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <script src="src/index.js"></script>
   </body>
 </html>
