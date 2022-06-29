@@ -100,3 +100,28 @@ function showPosition(position) {
   btn.addEventListener("click", showCurrentCityWeather)
 
   
+
+  let switchMode = document.getElementById("switchMode");
+
+  switchMode.onclick = function () {
+    let theme = document.getElementById("theme");
+
+    if (theme.getAttribute("href") == "src/style/light-mode.css") {
+      theme.href = "src/style/dark-mode.css";
+    } else {
+      theme.href = "src/style/light-mode.css"
+    }
+  }
+
+  document.getElementById("clearButton").onclick = function(e) {
+    // Если необходимо предотвратить/отменить событие по умолчанию,
+    // то необходимо вызвать метод preventDefault у события
+    // https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault
+    // e.preventDefault();
+    // если необходимо также предотвратить дальнейшее "всплытие" события,
+    // то необходимо вызвать метод stopPropagation у события
+    // https://developer.mozilla.org/ru/docs/Web/API/Event/stopPropagation
+    // e.stopPropagation();
+    document.getElementById("city-input").value = "";
+  }
+ 
