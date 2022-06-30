@@ -138,8 +138,61 @@ body {
     transition: 1s;
     border: 2px solid  #87ceeb;
   }
-  #clock {
-    font-family:Tahoma, sans-serif;
-    font-size:20px;
-    color:red;	
+
+
+
+
+  /* .bookacket {
+    height: 98px;
+    width: 358px;
+    position: relative;
+    background: linear-gradient(
+  135deg
+  , #0fe6d2, #efd814, #f526dc);
+    border-radius: 10px;
+    cursor: default;
+    animation: animate 1.5s linear infinite;
   }
+  .bookacket .uncomenkad,
+  .bookacket span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bookacket .uncomenkad{
+    z-index: 999;
+    height: 90px;
+    width: 348px;
+    background: #1b1b1b;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .uncomenkad #vemekunys {
+    line-height: 86px;
+    color: #fbf4f4;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: linear-gradient(
+  135deg
+  , #05f3dc, #e4d01b, #f10bd5);
+    animation: animate 1.5s linear infinite;
+  }
+  @keyframes animate {
+    100%{
+    filter: hue-rotate(360deg);
+    }
+  }
+  .bookacket span{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background: inherit;
+  }
+  .bookacket span:first-child{
+    filter: blur(7px);
+  }
+  .bookacket span:last-child{
+    filter: blur(20px);
+  } */
