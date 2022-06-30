@@ -60,10 +60,10 @@ function showCity(response) {
   let speedWind = document.querySelector("#wind");
   cityName.innerHTML = response.data.name;
   cityTemp.innerHTML =` ${Math.round(response.data.main.temp)}℃`;
-  humidity.innerHTML =` Humidity: ${response.data.main.humidity}%`;
+  humidity.innerHTML =` Humidity: ${response.data.main.humidity} %`;
   console.log(response);
   console.log(response.data.weather[0].main);
-  speedWind.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  speedWind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   cityPressure.innerHTML = `Pressure: ${response.data.main.pressure}mbar`;
   console.log(response.data.main.pressure)
 }

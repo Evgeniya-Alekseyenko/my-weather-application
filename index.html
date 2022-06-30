@@ -96,21 +96,36 @@
           <span></span>
           </div> -->
 
-        <div class="heading">
-          <img src="src/img/Sun_Monochromatic.png" width="80px" />
-          <h1>Weather app</h1>
-        </div>
-        <h2 id="city-name">Kharkiv</h2>
-        <div id="temp-data">
-          23°
-          <!-- <span class="units">
-          <a href="#" id="cels">°C</a>|
-          <a href="#" id="fahr">°F</a>
-        </span> -->
-        </div>
+          <div class="row align-items-center m-6">
 
-        <h4>Today</h4>
+            <div class="col-8">
+              <div class="heading">
+                <img src="src/img/Sun_Monochromatic.png" width="80px" />
+                <h1>Weather app</h1>
+              </div>
+              <h2 id="city-name">Kharkiv</h2>
+              <div id="temp-data">
+                23°
+                <!-- <span class="units">
+                <a href="#" id="cels">°C</a>|
+                <a href="#" id="fahr">°F</a>
+              </span> -->
+              </div>
+            </div>
+
+            <div class="col-4 border p-4 shadow p-3 rounded align-items-center">
+              <div class="props">
+                <span id="pressure">Pressure: mbar </span>
+                <span id="humidity">Humidity: %</span>
+                <span id="wind">Wind: km/h </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <h4>Today</h4>
         <span class="time">Time</span>
+          </div>      
 
         <div class="units-container">
           <div class="row row-cols-sm-3 row-cols-md-5">
@@ -203,11 +218,11 @@
 
 
 
-          <div class="props">
+          <!-- <div class="props">
             <span id="pressure">Pressure: mbar </span>
             <span id="humidity">Humidity: %</span>
             <span id="wind">Wind: km/h </span>
-          </div>
+          </div> -->
 
 
         </div>
