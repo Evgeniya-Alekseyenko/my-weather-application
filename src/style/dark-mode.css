@@ -2,6 +2,7 @@ body {
     background: black;
     transition: 3s;
     color: white;
+    box-sizing: border-box;
   }
   .main {
     display: flex;
@@ -27,9 +28,9 @@ body {
     #home_link {
       color: red;
     }
-   .nav-link:hover {
-   color: red;
-   }
+    .nav-link:hover {
+    color: red;
+    }
     #city-name, #temp-data {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 36px;
@@ -62,7 +63,7 @@ body {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin: 10px;
+      /* margin: 10px; */
     }
     a {
       text-decoration: none;
@@ -81,7 +82,7 @@ body {
       opacity: 0.8;
       font-weight: 300;
     }
-    .forecast_container {
+    /* .forecast_container {
       display: flex;
       align-items: center;
     }
@@ -91,7 +92,7 @@ body {
       margin: 5px;
       padding: 5px;
       text-align: center;
-    }
+    } */
     .rating_box {
       display: flex;
       justify-content: end;

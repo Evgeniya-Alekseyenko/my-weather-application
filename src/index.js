@@ -75,7 +75,7 @@ function showCityWeather(event) {
     if (inputCity.value.length !== 0)  {
       axios.get(cityUrl).then(showCity);
     }
-     else {
+    else {
       alert("Enter the the city!");
     }
   }

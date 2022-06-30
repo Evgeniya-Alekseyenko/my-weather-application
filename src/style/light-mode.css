@@ -1,6 +1,7 @@
 body {
     background: pink;
     transition: 1s;
+    box-sizing: border-box;
   }
   .main {
     display: flex;
@@ -63,7 +64,7 @@ body {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin: 10px;
+      /* margin: 10px; */
     }
     a {
       text-decoration: none;
@@ -82,7 +83,7 @@ body {
       opacity: 0.8;
       font-weight: 600;
     }
-    .forecast_container {
+    /* .forecast_container {
       display: flex;
       align-items: center;
     }
@@ -92,7 +93,7 @@ body {
       margin: 5px;
       padding: 5px;
       text-align: center;
-    }
+    } */
     .rating_box {
       display: flex;
       justify-content: end;
