@@ -61,12 +61,17 @@ function showCity(response) {
   let cityPressure = document.querySelector('#pressure');
   let humidity = document.querySelector("#humidity");
   let speedWind = document.querySelector("#wind");
+  let weatherIcon = document.querySelector("#weatherIcon");
   cityName.innerHTML = response.data.name;
   cityTemp.innerHTML =` ${Math.round(response.data.main.temp)}℃`;
   humidity.innerHTML =` Humidity: ${response.data.main.humidity} %`;
   cityWeather.innerHTML = response.data.weather[0].description;
   speedWind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   cityPressure.innerHTML = `Pressure: ${response.data.main.pressure}mbar`;
+  weatherIcon.setAttribute("src",
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  weatherIcon.setAttribute("alt",
+  response.data.weather[0].description);
 }
 
 function showCityWeather(event) {
@@ -77,7 +82,7 @@ function showCityWeather(event) {
       axios.get(cityUrl).then(showCity);
     }
     else {
-      alert("Enter the the city!");
+      alert("Enter the city!");
     }
   }
   let formSearchCity = document.querySelector("#city-form");
