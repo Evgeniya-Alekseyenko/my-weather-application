@@ -48,7 +48,6 @@
     }
     return formattedDate;
   }
-  console.log(formatDate(currentTime));
 
 let apiKey = "e4dc49ce2bc5d1c1459936259cc8c63f";
 let unit = "units=metric";
@@ -66,11 +65,8 @@ function showCity(response) {
   cityTemp.innerHTML =` ${Math.round(response.data.main.temp)}℃`;
   humidity.innerHTML =` Humidity: ${response.data.main.humidity} %`;
   cityWeather.innerHTML = response.data.weather[0].description;
-  console.log(response);
-  console.log(response.data.weather[0].main);
   speedWind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   cityPressure.innerHTML = `Pressure: ${response.data.main.pressure}mbar`;
-  console.log(response.data.main.pressure)
 }
 
 function showCityWeather(event) {
