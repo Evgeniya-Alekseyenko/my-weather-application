@@ -3,6 +3,9 @@ body {
     transition: 1s;
     box-sizing: border-box;
   }
+  ul {
+    list-style: none;
+  }
   .main {
     display: flex;
     flex-direction: column;
@@ -25,14 +28,14 @@ body {
     h1 {
       color: 	red;
     }
-.navbar {
-  width: 100%;
-}
- .buttonwrapper {
-   display: flex;
-  width: 100%;
-   align-items: center;
- }
+    .navbar {
+      width: 100%;
+    }
+    .buttonwrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    }
   #clearButton {
     margin-left: -15%;
     border: none;
@@ -62,6 +65,13 @@ body {
     }
     a {
       text-decoration: none;
+    }
+    #description {
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+    #description::first-letter{
+      text-transform: capitalize;
     }
     .units {
       margin: 5px;
@@ -123,8 +133,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     line-height: 28px;
+    color: lightskyblue;
   }
 
 

@@ -40,8 +40,11 @@
     let timeHeading = document.querySelector(".time");
     if (minutes < 10 ) {
     timeHeading.innerHTML = `Current time:  ${hour} : 0${minutes}`;
+    } else if (hour < 10) {
+        timeHeading.innerHTML = `Current time: 0${hour} : ${minutes}`;
     } else {
-        timeHeading.innerHTML = `Current time: ${hour} : ${minutes}`;
+      timeHeading.innerHTML = `Current time: ${hour} : ${minutes}`;
+
     }
     return formattedDate;
   }
@@ -55,12 +58,14 @@ let inputCity = document.querySelector("#city-input");
 function showCity(response) {
   let cityName = document.querySelector("#city-name");
   let cityTemp = document.querySelector("#temp-data");
+  let cityWeather = document.querySelector('#description');
   let cityPressure = document.querySelector('#pressure');
   let humidity = document.querySelector("#humidity");
   let speedWind = document.querySelector("#wind");
   cityName.innerHTML = response.data.name;
   cityTemp.innerHTML =` ${Math.round(response.data.main.temp)}℃`;
   humidity.innerHTML =` Humidity: ${response.data.main.humidity} %`;
+  cityWeather.innerHTML = response.data.weather[0].description;
   console.log(response);
   console.log(response.data.weather[0].main);
   speedWind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
