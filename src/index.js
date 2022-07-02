@@ -48,6 +48,7 @@
     }
     return formattedDate;
   }
+  formatDate(currentTime);
 
 let apiKey = "e4dc49ce2bc5d1c1459936259cc8c63f";
 let unit = "units=metric";
