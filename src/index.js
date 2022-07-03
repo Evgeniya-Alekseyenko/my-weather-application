@@ -55,6 +55,9 @@ let url = "https://api.openweathermap.org/data/2.5/weather?";
 let inputCity = document.querySelector("#city-input");
 
 function showCity(response) {
+    // if (!response.data){
+        // controller.abort()
+    // }
     let cityName = document.querySelector("#city-name");
     let cityTemp = document.querySelector("#temp-data");
     let cityWeather = document.querySelector("#description");
@@ -63,12 +66,8 @@ function showCity(response) {
     let speedWind = document.querySelector("#wind");
     let weatherIcon = document.querySelector("#weatherIcon");
     cityName.innerHTML = response.data.name;
-    // cityTemp.innerHTML = ` ${Math.round(response.data.main.temp)}℃`;
-
     celsiusTemp = response.data.main.temp;
     cityTemp.innerHTML = Math.round(celsiusTemp);
-
-
     humidity.innerHTML = ` Humidity: ${response.data.main.humidity} %`;
     cityWeather.innerHTML = response.data.weather[0].description;
     speedWind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
@@ -85,6 +84,28 @@ function showCityWeather(event) {
     let inputCity = document.querySelector("#city-input");
     let cityUrl = `${url}q=${inputCity.value}&${unit}&appid=${apiKey}`;
     if (inputCity.value.length !== 0) {
+
+        // const controller = new AbortController();
+        // axios
+        //     .get(cityUrl, {
+        //         signal: controller.signal,
+        //     })
+        //     .catch(function (error) {
+        //         if (error.response) {
+        //             // The request was made and the server responded with a status code
+        //             // that falls out of the range of 2xx
+        //             alert(error.response.data.message);
+        //         } else if (error.request) {
+        //             // The request was made but no response was received
+        //             alert("The service is unavailable\nPleace try again later");
+        //         } else {
+        //             // Something happened in setting up the request that triggered an Error
+        //             alert("Error", error.message);
+        //         }
+        //         controller.abort();
+        //     })
+        //     .then(showCity);
+
         axios.get(cityUrl).then(showCity);
     } else {
         alert("Enter the city!");
@@ -128,49 +149,25 @@ switchMode.onclick = function () {
 function showFahrenheitTemperature(e) {
     e.preventDefault();
     let cityTemp = document.querySelector("#temp-data");
-  
+
     celsiusLink.classList.remove("active");
     fahrenheitLink.classList.add("active");
     let fahrenheiTemperature = (celsiusTemp * 9) / 5 + 32;
     cityTemp.innerHTML = Math.round(fahrenheiTemperature);
-  }
+}
 
-  function showCelsiusTemperature(e) {
+function showCelsiusTemperature(e) {
     e.preventDefault();
     celsiusLink.classList.add("active");
     fahrenheitLink.classList.remove("active");
     let cityTemp = document.querySelector("#temp-data");
     cityTemp.innerHTML = Math.round(celsiusTemp);
-  }
-  
-  let celsiusTemp = null;
+}
 
-  let fahrenheitLink = document.querySelector("#fahr");
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahr");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#cels");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
-
-
-// setInterval(()=>{
-//   const vemekunys = document.querySelector(".uncomenkad #vemekunys");
-//   let date = new Date();
-//   let hours = date.getHours();
-//   let minutes = date.getMinutes();
-//   let seconds = date.getSeconds();
-//   let day_night = "AM";
-//   if(hours > 12){
-//   day_night = "PM";
-//   hours = hours - 12;
-//   }
-//   if(seconds < 10){
-//   seconds = "0" + seconds;
-//   }
-//   if(minutes < 10){
-//   minutes = "0" + minutes;
-//   }
-//   if(hours < 10){
-//   hours = "0" + hours;
-//   }
-//   vemekunys.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
-//   });
