@@ -147,6 +147,15 @@ a {
   color: lightskyblue;
 }
 
+.units .active {
+  color: black;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
+
 /* .bookacket {
     height: 98px;
     width: 358px;
