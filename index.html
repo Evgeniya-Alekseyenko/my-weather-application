@@ -1,92 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>My Weather App</title>
-    <meta charset="UTF-8" />
-    <script
-      src="https://kit.fontawesome.com/cbfd15a155.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="src/style/light-mode.css" id="theme" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="main">
-        <nav class="navbar navbar-expand-lg bg-light" id="navbar">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="https://www.shecodes.io/">
-              <img src="src/img/undraw_Weather_app_re_kcb1.png" width="80px" />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-4 mb-lg-0">
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    aria-current="page"
-                    id="home_link"
-                    href="#"
-                    >Home</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About us</a>
-                </li>
-                <li class="nav-item">
-                  <button
-                    class="btn btn-outline-dark me-8"
-                    id="switchMode"
-                    type="submit"
-                  >
-                    Settings
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+    <head>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <title>My Weather App</title>
+        <meta charset="UTF-8" />
+        <script
+            src="https://kit.fontawesome.com/cbfd15a155.js"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="src/style/light-mode.css" id="theme" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="main">
+                <nav class="navbar navbar-expand-lg bg-light" id="navbar">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="https://www.shecodes.io/">
+                            <img
+                                src="src/img/undraw_Weather_app_re_kcb1.png"
+                                width="80px"
+                            />
+                        </a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div
+                            class="collapse navbar-collapse"
+                            id="navbarSupportedContent"
+                        >
+                            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        id="home_link"
+                                        href="#"
+                                        >Home</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <button
+                                        class="btn btn-outline-dark me-8"
+                                        id="switchMode"
+                                        type="submit"
+                                    >
+                                        Settings
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
 
-        <form class="d-flex" role="search" id="city-form">
-          <div class="form-group required">
-            <div class="col-sm-4 buttonwrapper">
-              <input
-                class="form-control me-2"
-                type="text"
-                id="city-input"
-                placeholder="Enter your city..."
-                required
-              />
-              <button type="reset" id="clearButton">X</button>
-            </div>
-          </div>
-          <button
-            class="btn btn-outline-success ms-2"
-            type="submit"
-            value="Search"
-            id="search"
-          >
-            Search
-          </button>
-          <button class="btn btn-success ms-2" type="submit" id="currentBtn">
-            Current
-          </button>
-        </form>
-<!-- 
+                <form class="d-flex" role="search" id="city-form">
+                    <div class="form-group required">
+                        <div class="col-sm-8 buttonwrapper">
+                            <input
+                                class="form-control me-2"
+                                type="text"
+                                id="city-input"
+                                placeholder="Enter your city..."
+                                required
+                            />
+                            <button type="reset" id="clearButton">X</button>
+                        </div>
+                    </div>
+                    <button
+                        class="btn btn-outline-success ms-2 w-30"
+                        type="submit"
+                        value="Search"
+                        id="search"
+                    >
+                        Search
+                    </button>
+                    <button
+                        class="btn btn-success ms-2 w-30"
+                        type="submit"
+                        id="currentBtn"
+                    >
+                        Current
+                    </button>
+                </form>
+                <!-- 
         <div class="bookacket">
           <div class="uncomenkad">
           <div id="vemekunys">
@@ -96,135 +106,143 @@
           <span></span>
           </div> -->
 
-          <div class="row d-flex align-items-center justify-content-between m-6">
-
-            <div class="col-6 align-items-center">
-              <div class="heading">              
-                <h1>Weather app</h1>
-              </div>
-              <div class="weather-icon">
-                <img src="src/img/Sun_Monochromatic.png" width="100px"
-                alt="weather icon"
-                id="weatherIcon"
-                />
-                <h2 id="city-name">Kharkiv</h2>
-              </div>             
-              <div id="temp-data">
-                23°
-                <!-- <span class="units">
-                <a href="#" id="cels">°C</a>|
+                <div
+                    class="row d-flex align-items-center justify-content-between m-6"
+                >
+                    <div class="col-6 align-items-center">
+                        <div class="heading">
+                            <h1>Weather app</h1>
+                        </div>
+                        <div class="weather-icon">
+                            <img
+                                src="src/img/Sun_Monochromatic.png"
+                                width="100px"
+                                alt="weather icon"
+                                id="weatherIcon"
+                            />
+                            <h2 id="city-name"></h2>
+                        </div>
+                        <div id="temp-data">
+                            
+                            <span class="units">
+                <a href="#" id="cels" class="active">°C</a>|
                 <a href="#" id="fahr">°F</a>
-              </span> -->
-              </div>
-              <div id="description"></div>
-            </div>
+              </span>
+                        </div>
+                        <div id="description"></div>
+                    </div>
 
-            <div class="col-4 border p-4 shadow p-3 rounded align-items-center">
-              <div class="props">
-                <span id="pressure">Pressure: mbar </span>
-                <span id="humidity">Humidity: %</span>
-                <span id="wind">Wind: km/h </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <h4>Today</h4>
-        <span class="time">Time</span>
-          </div>      
-
-        <div class="units-container">
-          <div class="row row-cols-sm-3 row-cols-md-5">
-            <div class="col">
-              <div
-                class="card align-items-center shadow"
-                style="width: 6rem; height: 10rem"
-              >
-                <img
-                  src="src/img/undraw_Raining_re_4b55.png"
-                  class="card-img-top"
-                  alt="raining"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">15°</h5>
-                  <p class="card-text">Monday</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    <div
+                        class="col-4 border p-4 shadow p-3 rounded align-items-center"
+                    >
+                        <div class="props">
+                            <span id="pressure">Pressure: mbar </span>
+                            <span id="humidity">Humidity: %</span>
+                            <span id="wind">Wind: km/h </span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col">
-              <div
-                class="card align-items-center shadow"
-                style="width: 6rem; height: 10rem"
-              >
-                <img
-                  src="src/img/oblachka-1.png"
-                  class="card-img-top"
-                  alt="raining"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">20°</h5>
-                  <p class="card-text">Tuesday</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                <div class="row">
+                    <h4>Today</h4>
+                    <span class="time">Time</span>
                 </div>
-              </div>
-            </div>
 
-            <div class="col">
-              <div
-                class="card align-items-center shadow"
-                style="width: 6rem; height: 10rem"
-              >
-                <img src="src/img/sun.jpg" class="card-img-top" alt="raining" />
-                <div class="card-body">
-                  <h5 class="card-title">18°</h5>
-                  <p class="card-text">Wednesday</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                <div class="units-container">
+                    <div class="row row-cols-sm-3 row-cols-md-5">
+                        <div class="col">
+                            <div
+                                class="card align-items-center shadow"
+                                style="width: 6rem; height: 10rem"
+                            >
+                                <img
+                                    src="src/img/undraw_Raining_re_4b55.png"
+                                    class="card-img-top"
+                                    alt="raining"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">15°</h5>
+                                    <p class="card-text">Monday</p>
+                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div
+                                class="card align-items-center shadow"
+                                style="width: 6rem; height: 10rem"
+                            >
+                                <img
+                                    src="src/img/oblachka-1.png"
+                                    class="card-img-top"
+                                    alt="raining"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">20°</h5>
+                                    <p class="card-text">Tuesday</p>
+                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div
+                                class="card align-items-center shadow"
+                                style="width: 6rem; height: 10rem"
+                            >
+                                <img
+                                    src="src/img/sun.jpg"
+                                    class="card-img-top"
+                                    alt="raining"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">18°</h5>
+                                    <p class="card-text">Wednesday</p>
+                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div
+                                class="card align-items-center shadow"
+                                style="width: 6rem; height: 10rem"
+                            >
+                                <img
+                                    src="src/img/undraw_Sunny_day_re_gyxr.png"
+                                    class="card-img-top"
+                                    alt="raining"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">19°</h5>
+                                    <p class="card-text">Thusday</p>
+                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div
+                                class="card align-items-center shadow"
+                                style="width: 6rem; height: 10rem"
+                            >
+                                <img
+                                    src="src/img/oblachka-1.png"
+                                    class="card-img-top"
+                                    alt="raining"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">14°</h5>
+                                    <p class="card-text">Friday</p>
+                                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col">
-              <div
-                class="card align-items-center shadow"
-                style="width: 6rem; height: 10rem"
-              >
-                <img
-                  src="src/img/undraw_Sunny_day_re_gyxr.png"
-                  class="card-img-top"
-                  alt="raining"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">19°</h5>
-                  <p class="card-text">Thusday</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div
-                class="card align-items-center shadow"
-                style="width: 6rem; height: 10rem"
-              >
-                <img
-                  src="src/img/oblachka-1.png"
-                  class="card-img-top"
-                  alt="raining"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">14°</h5>
-                  <p class="card-text">Friday</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      
-        <!-- <div class="col-md-6">
+                <!-- <div class="col-md-6">
 
           <div>
           <span class="rating_title">Rating</span>
@@ -238,30 +256,30 @@
         </div>
 
         </div> -->
+            </div>
 
-      </div>
-
-      <div class="link-git-box">
-        <a
-          href="https://github.com/Evgeniya-Alekseyenko/my-weather-application"
-          class="link-git"
-          target="_blank"
-        >
-          <img
-            class="img-git"
-            src="src/img/kisspng-github-bitbucket-fork-software-repository-icons-for-windows-github-logo-5ab0faded05d05.5387371715215479988535.png"
-            width="50px"
-          />Open-sourse code
-          <span class="name_link"> by Yevgeniya Alekseyenko with love </span>
-        </a>
-      </div>
-
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="src/index.js"></script>
-  </body>
+            <div class="link-git-box">
+                <a
+                    href="https://github.com/Evgeniya-Alekseyenko/my-weather-application"
+                    class="link-git"
+                    target="_blank"
+                >
+                    <img
+                        class="img-git"
+                        src="src/img/kisspng-github-bitbucket-fork-software-repository-icons-for-windows-github-logo-5ab0faded05d05.5387371715215479988535.png"
+                        width="50px"
+                    />Open-sourse code
+                    <span class="name_link">
+                        by Yevgeniya Alekseyenko with love
+                    </span>
+                </a>
+            </div>
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <script src="src/index.js"></script>
+    </body>
 </html>
