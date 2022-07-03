@@ -107,6 +107,7 @@ function showPosition(position) {
   let btn = document.querySelector("#currentBtn");
   btn.addEventListener("click", showCurrentCityWeather)
 
+
   // Additional functionality: adding a dark theme, and the ability to change the light theme to a dark one
 
   let switchMode = document.getElementById("switchMode");
@@ -143,3 +144,14 @@ function showPosition(position) {
   //   }
   //   vemekunys.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
   //   });
+
+  function showFahrenheitTemp (e) {
+    e.preventDefault();
+  let tempElement = document.querySelector("#temp-data");
+  let fahrenheitTemp = (tempElement.innerHTML * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+  console.log(tempElement)
+  }
+
+  let fahrenheit = document.querySelector("#fahr");
+  fahrenheit.addEventListener("click", showFahrenheitTemp)
