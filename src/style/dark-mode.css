@@ -34,6 +34,10 @@ body {
     #city-name, #temp-data {
     font-size: 28px;
     line-height: 28px;
+    font-family: 'Rubik One', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: gold;
     }
     .navbar {
     width: 100%;
