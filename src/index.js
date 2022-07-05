@@ -222,6 +222,8 @@ switchMode.onclick = function () {
     let theme = document.getElementById("theme");
 
     if (theme.getAttribute("href") == "src/style/light-mode.css") {
+        theme.href = "src/style/sky-mode.css";
+    } else if (theme.getAttribute("href") == "src/style/sky-mode.css") {
         theme.href = "src/style/dark-mode.css";
     } else {
         theme.href = "src/style/light-mode.css";
