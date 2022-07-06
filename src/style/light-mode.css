@@ -98,10 +98,14 @@ a {
 }
 #description {
     opacity: 0.7;
-    margin-top: 10px;
+    color: blue;
 }
 #description::first-letter {
     text-transform: capitalize;
+}
+.sunMovement {
+    margin-top: 5px;
+    color: #87cefa;
 }
 .units {
     margin: 5px;
