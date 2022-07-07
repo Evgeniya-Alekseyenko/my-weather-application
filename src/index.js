@@ -54,7 +54,7 @@ formatDate(currentTime);
 
 let apiKey = "e4dc49ce2bc5d1c1459936259cc8c63f";
 let url = "https://api.openweathermap.org/data/2.5/weather?";
-let inputCity = document.querySelector("#city-input");
+// let inputCity = document.querySelector("#city-input");
 
 function showHoursForSunMove(timestamp) {
     let date = new Date(timestamp);
@@ -108,13 +108,15 @@ function showCity(response) {
     weatherIcon.setAttribute("alt", response.data.weather[0].description);
 
     getForecast(response.data.coord);
+    
 }
 
 function showCityWeather(event) {
+    console.log(event)
     event.preventDefault();
     let inputCity = document.querySelector("#city-input");
     let cityUrl = `${url}q=${inputCity.value}&units=metric&appid=${apiKey}`;
-    if (inputCity.value.length !== 0) {
+    // if (inputCity.value.length !== 0) {
         // const controller = new AbortController();
         // axios
         //     .get(cityUrl, {
@@ -137,9 +139,7 @@ function showCityWeather(event) {
         //     .then(showCity);
 
         axios.get(cityUrl).then(showCity);
-    } else {
-        alert("Enter the city!");
-    }
+    // } 
 }
 let formSearchCity = document.querySelector("#city-form");
 formSearchCity.addEventListener("submit", showCityWeather);
@@ -155,7 +155,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-    // console.log("response data daily", response.data.daily);
     let forecast = response.data.daily;
 
     let forecastElement = document.querySelector("#forecast");
