@@ -108,39 +108,38 @@ function showCity(response) {
     weatherIcon.setAttribute("alt", response.data.weather[0].description);
 
     getForecast(response.data.coord);
-    
 }
 
 function showCityWeather(event) {
-    console.log(event)
     event.preventDefault();
     let inputCity = document.querySelector("#city-input");
     let cityUrl = `${url}q=${inputCity.value}&units=metric&appid=${apiKey}`;
     // if (inputCity.value.length !== 0) {
-        // const controller = new AbortController();
-        // axios
-        //     .get(cityUrl, {
-        //         signal: controller.signal,
-        //     })
-        //     .catch(function (error) {
-        //         if (error.response) {
-        //             // The request was made and the server responded with a status code
-        //             // that falls out of the range of 2xx
-        //             alert(error.response.data.message);
-        //         } else if (error.request) {
-        //             // The request was made but no response was received
-        //             alert("The service is unavailable\nPleace try again later");
-        //         } else {
-        //             // Something happened in setting up the request that triggered an Error
-        //             alert("Error", error.message);
-        //         }
-        //         controller.abort();
-        //     })
-        //     .then(showCity);
+    // const controller = new AbortController();
+    // axios
+    //     .get(cityUrl, {
+    //         signal: controller.signal,
+    //     })
+    //     .catch(function (error) {
+    //         if (error.response) {
+    //             // The request was made and the server responded with a status code
+    //             // that falls out of the range of 2xx
+    //             alert(error.response.data.message);
+    //         } else if (error.request) {
+    //             // The request was made but no response was received
+    //             alert("The service is unavailable\nPleace try again later");
+    //         } else {
+    //             // Something happened in setting up the request that triggered an Error
+    //             alert("Error", error.message);
+    //         }
+    //         controller.abort();
+    //     })
+    //     .then(showCity);
 
-        axios.get(cityUrl).then(showCity);
-    // } 
+    axios.get(cityUrl).then(showCity);
+    // }
 }
+
 let formSearchCity = document.querySelector("#city-form");
 formSearchCity.addEventListener("submit", showCityWeather);
 
