@@ -110,10 +110,10 @@ function showCity(response) {
     getForecast(response.data.coord);
 }
 
-function showCityWeather(event) {
-    event.preventDefault();
-    let inputCity = document.querySelector("#city-input");
-    let cityUrl = `${url}q=${inputCity.value}&units=metric&appid=${apiKey}`;
+function showCityWeather(inputCity) {
+    // event.preventDefault();
+    // let inputCity = document.querySelector("#city-input");
+    // let cityUrl = `${url}q=${inputCity.value}&units=metric&appid=${apiKey}`;
     // if (inputCity.value.length !== 0) {
     // const controller = new AbortController();
     // axios
@@ -135,9 +135,20 @@ function showCityWeather(event) {
     //         controller.abort();
     //     })
     //     .then(showCity);
-
-    axios.get(cityUrl).then(showCity);
+    // axios.get(cityUrl).then(showCity);
     // }
+}
+function searchCityWeather(city) {
+    let apiKey = "e4dc49ce2bc5d1c1459936259cc8c63f";
+    let cityUrl = `${url}q=${city}&units=metric&appid=${apiKey}`;
+    // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(cityUrl).then(showCity);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let inputCity = document.querySelector("#city-input");
+    searchCityWeather(inputCity.value);
 }
 
 let formSearchCity = document.querySelector("#city-form");
@@ -256,3 +267,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#cels");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+searchCityWeather("Kharkiv");
