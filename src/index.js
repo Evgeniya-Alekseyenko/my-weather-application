@@ -54,7 +54,6 @@ formatDate(currentTime);
 
 let apiKey = "e4dc49ce2bc5d1c1459936259cc8c63f";
 let url = "https://api.openweathermap.org/data/2.5/weather?";
-// let inputCity = document.querySelector("#city-input");
 
 function showHoursForSunMove(timestamp) {
     let date = new Date(timestamp);
@@ -71,9 +70,6 @@ function showHoursForSunMove(timestamp) {
 }
 
 function showCity(response) {
-    // if (!response.data){
-    // controller.abort()
-    // }
     let cityName = document.querySelector("#city-name");
     let cityTemp = document.querySelector("#temp-data");
     let cityWeather = document.querySelector("#description");
@@ -110,47 +106,20 @@ function showCity(response) {
     getForecast(response.data.coord);
 }
 
-// function showCityWeather(inputCity) {
-// event.preventDefault();
-// let inputCity = document.querySelector("#city-input");
-// let cityUrl = `${url}q=${inputCity.value}&units=metric&appid=${apiKey}`;
-// if (inputCity.value.length !== 0) {
-// const controller = new AbortController();
-// axios
-//     .get(cityUrl, {
-//         signal: controller.signal,
-//     })
-//     .catch(function (error) {
-//         if (error.response) {
-//             // The request was made and the server responded with a status code
-//             // that falls out of the range of 2xx
-//             alert(error.response.data.message);
-//         } else if (error.request) {
-//             // The request was made but no response was received
-//             alert("The service is unavailable\nPleace try again later");
-//         } else {
-//             // Something happened in setting up the request that triggered an Error
-//             alert("Error", error.message);
-//         }
-//         controller.abort();
-//     })
-//     .then(showCity);
-// axios.get(cityUrl).then(showCity);
-// }
-// }
 function searchCityWeather(city) {
     let apiKey = "e4dc49ce2bc5d1c1459936259cc8c63f";
     let cityUrl = `${url}q=${city}&units=metric&appid=${apiKey}`;
-    // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(cityUrl).then(showCity);
 
-    // try {
-    //     response.code == "ERR_BAD_REQUEST"
-
-    //     // inputCity.value == undefined;
-    // } catch (e) {
-    //     alert("Please enter a valid city name");
-    // }
+    axios
+        .get(cityUrl)
+        .then(showCity)
+        .catch((err) => {
+            if (err.response.data) {
+                alert(err.response.data.message);
+            } else {
+                alert(err.message);
+            }
+        });
 }
 
 function handleSubmit(event) {
@@ -277,18 +246,3 @@ let celsiusLink = document.querySelector("#cels");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 searchCityWeather("Kharkiv");
-
-// axios
-//     .get(url, data)
-//     .then((response) => {
-//         // do good things
-//     })
-//     .catch((err) => {
-//         if (err.response) {
-//             // client received an error response (5xx, 4xx)
-//         } else if (err.request) {
-//             // client never received a response, or request never left
-//         } else {
-//             // anything else
-//         }
-//     });
