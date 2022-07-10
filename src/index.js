@@ -110,39 +110,47 @@ function showCity(response) {
     getForecast(response.data.coord);
 }
 
-function showCityWeather(inputCity) {
-    // event.preventDefault();
-    // let inputCity = document.querySelector("#city-input");
-    // let cityUrl = `${url}q=${inputCity.value}&units=metric&appid=${apiKey}`;
-    // if (inputCity.value.length !== 0) {
-    // const controller = new AbortController();
-    // axios
-    //     .get(cityUrl, {
-    //         signal: controller.signal,
-    //     })
-    //     .catch(function (error) {
-    //         if (error.response) {
-    //             // The request was made and the server responded with a status code
-    //             // that falls out of the range of 2xx
-    //             alert(error.response.data.message);
-    //         } else if (error.request) {
-    //             // The request was made but no response was received
-    //             alert("The service is unavailable\nPleace try again later");
-    //         } else {
-    //             // Something happened in setting up the request that triggered an Error
-    //             alert("Error", error.message);
-    //         }
-    //         controller.abort();
-    //     })
-    //     .then(showCity);
-    // axios.get(cityUrl).then(showCity);
-    // }
-}
+// function showCityWeather(inputCity) {
+// event.preventDefault();
+// let inputCity = document.querySelector("#city-input");
+// let cityUrl = `${url}q=${inputCity.value}&units=metric&appid=${apiKey}`;
+// if (inputCity.value.length !== 0) {
+// const controller = new AbortController();
+// axios
+//     .get(cityUrl, {
+//         signal: controller.signal,
+//     })
+//     .catch(function (error) {
+//         if (error.response) {
+//             // The request was made and the server responded with a status code
+//             // that falls out of the range of 2xx
+//             alert(error.response.data.message);
+//         } else if (error.request) {
+//             // The request was made but no response was received
+//             alert("The service is unavailable\nPleace try again later");
+//         } else {
+//             // Something happened in setting up the request that triggered an Error
+//             alert("Error", error.message);
+//         }
+//         controller.abort();
+//     })
+//     .then(showCity);
+// axios.get(cityUrl).then(showCity);
+// }
+// }
 function searchCityWeather(city) {
     let apiKey = "e4dc49ce2bc5d1c1459936259cc8c63f";
     let cityUrl = `${url}q=${city}&units=metric&appid=${apiKey}`;
     // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(cityUrl).then(showCity);
+
+    // try {
+    //     response.code == "ERR_BAD_REQUEST"
+
+    //     // inputCity.value == undefined;
+    // } catch (e) {
+    //     alert("Please enter a valid city name");
+    // }
 }
 
 function handleSubmit(event) {
@@ -152,7 +160,7 @@ function handleSubmit(event) {
 }
 
 let formSearchCity = document.querySelector("#city-form");
-formSearchCity.addEventListener("submit", showCityWeather);
+formSearchCity.addEventListener("submit", handleSubmit);
 
 // Added the forecast
 
@@ -214,7 +222,7 @@ function showPosition(position) {
     let currentLatitude = position.coords.latitude;
     let currentCityUrl = `${url}lat=${currentLatitude}&lon=${currentLongitude}&units=metric&appid=${apiKey}`;
     axios.get(currentCityUrl).then(showCity);
-    inputCity.value = null;
+    // inputCity.value = null;
 }
 
 function showCurrentCityWeather(event) {
@@ -269,3 +277,18 @@ let celsiusLink = document.querySelector("#cels");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 searchCityWeather("Kharkiv");
+
+// axios
+//     .get(url, data)
+//     .then((response) => {
+//         // do good things
+//     })
+//     .catch((err) => {
+//         if (err.response) {
+//             // client received an error response (5xx, 4xx)
+//         } else if (err.request) {
+//             // client never received a response, or request never left
+//         } else {
+//             // anything else
+//         }
+//     });

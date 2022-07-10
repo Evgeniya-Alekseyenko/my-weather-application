@@ -67,7 +67,8 @@ h1 {
     color: red;
 }
 #city-name,
-#temp-data, #description {
+#temp-data,
+#description {
     margin-top: 10px;
     font-size: 28px;
     line-height: 28px;
