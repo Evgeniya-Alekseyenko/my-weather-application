@@ -3,6 +3,8 @@
     <head>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <title>My Weather App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <meta charset="UTF-8" />
         <script
             src="https://kit.fontawesome.com/cbfd15a155.js"
@@ -82,7 +84,11 @@
                     </div>
                 </nav>
 
-                <form class="d-flex" role="search" id="city-form">
+                <form
+                    class="d-flex form-search m-4"
+                    role="search"
+                    id="city-form"
+                >
                     <div class="form-group required">
                         <div class="col-sm-8 buttonwrapper">
                             <input
@@ -95,27 +101,29 @@
                             <button type="reset" id="clearButton">X</button>
                         </div>
                     </div>
-                    <button
-                        class="btn btn-outline-success ms-2 w-30"
-                        type="submit"
-                        value="Search"
-                        id="search"
-                    >
-                        Search
-                    </button>
-                    <button
-                        class="btn btn-success ms-2 w-30"
-                        type="submit"
-                        id="currentBtn"
-                    >
-                        Current
-                    </button>
+                    <div class="btn-group">
+                        <button
+                            class="btn btn-outline-success ms-2 w-30"
+                            type="submit"
+                            value="Search"
+                            id="search"
+                        >
+                            Search
+                        </button>
+                        <button
+                            class="btn btn-success ms-2 w-30"
+                            type="submit"
+                            id="currentBtn"
+                        >
+                            Current
+                        </button>
+                    </div>
                 </form>
                 <div class="col-6 align-items-center">
                     <div class="heading">
                         <h1>Weather app</h1>
                     </div>
-                    <div class="weather-icon">
+                    <div class="weather-icon__name">
                         <h2 id="city-name"></h2>
                     </div>
                     <div class="row">
@@ -148,7 +156,7 @@
                 </div>
 
                 <div
-                    class="col-md-3 col-sm-4 border shadow rounded align-items-center"
+                    class="col-md-3 col-sm-4 m-4 border shadow rounded align-items-center"
                 >
                     <div class="props">
                         <div id="pressure">Pressure: mbar</div>
@@ -157,7 +165,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row currentTime">
                     <h4>Today</h4>
                     <span class="time">Time</span>
                 </div>
